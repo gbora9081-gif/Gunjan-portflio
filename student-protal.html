@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gunjan | Student Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        nav {
+            background-color: #1e3a5f;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav h2 {
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #7ec8e3;
+        }
+        #home {
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1e3a5f, #2c6e9e);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .home-content {
+            max-width: 800px;
+        }
+        .home-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+        .home-content h1 span {
+            color: #7ec8e3;
+        }
+        .home-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+        .button {
+            display: inline-block;
+            background-color: white;
+            color: #1e3a5f;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #7ec8e3;
+            color: white;
+        }
+        section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        section h2 {
+            text-align: center;
+            color: #1e3a5f;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #dceaf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .skill {
+            background-color: #e8f3f8;
+            color: #1e3a5f;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+        .skill:hover {
+            background-color: #1e3a5f;
+            color: white;
+        }
+        .education-box {
+            text-align: center;
+        }
+        .education-box h3 {
+            color: #2c6e9e;
+            margin-bottom: 10px;
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .project-card h3 {
+            color: #2c6e9e;
+            margin-bottom: 10px;
+        }
+        .hobbies-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .hobby {
+            background-color: #f0f5f8;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact p {
+            margin: 12px;
+        }
+        .contact a {
+            color: #2c6e9e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .home-content h1 {
+                font-size: 40px;
+            }
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            section {
+                margin: 30px 15px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Gunjan</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="home">
+        <div class="home-content">
+            <h1>Hi, I'm <span>Gunjan</span></h1>
+            <p>Student | Web Development Learner | Programmer</p>
+            <p>Welcome to my personal portfolio website.</p>
+            <a href="#about" class="button">
+                Explore My Portfolio
+            </a>
+        </div>
+    </header>
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-image">
+                👩‍💻
+            </div>
+            <div class="about-text">
+                <p>
+                    Hello! My name is Gunjan.
+                    I am a student interested in technology,
+                    programming, and web development.
+                </p>
+                <p>
+                    I am currently learning HTML, CSS, and Java.
+                    I enjoy creating websites and improving
+                    my coding skills.
+                </p>
+                <p>
+                    My goal is to become better at programming
+                    and build creative and useful projects.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Java</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">GitHub</div>
+        </div>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-box">
+            <h3>Student</h3>
+            <p>
+                I am currently studying and developing
+                my programming and web development skills.
+            </p>
+            <p>
+                I am learning programming concepts,
+                HTML, CSS, Java, and other technologies.
+            </p>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal portfolio website created
+                    using HTML and CSS to showcase my
+                    skills and information.
+                </p>
+            </div>
+            <div class="project-card">
+                <h3>HTML Practice Projects</h3>
+                <p>
+                    Different webpages created while
+                    learning HTML elements, lists,
+                    tables, forms, and links.
+                </p>
+            </div>
+            <div class="project-card">
+                <h3>CSS Practice</h3>
+                <p>
+                    Practice projects created using CSS
+                    including colors, layouts, flexbox,
+                    and responsive design.
+                </p>
+            </div>
+            <div class="project-card">
+                <h3>Java Practice</h3>
+                <p>
+                    Beginner Java programs created while
+                    learning variables, conditions,
+                    loops, and basic programming.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>My Hobbies</h2>
+        <div class="hobbies-container">
+            <div class="hobby">
+                🎮
+                <p>Playing Games</p>
+            </div>
+            <div class="hobby">
+                💻
+                <p>Learning Technology</p>
+            </div>
+            <div class="hobby">
+                🎨
+                <p>Designing</p>
+            </div>
+            <div class="hobby">
+                📚
+                <p>Learning New Things</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact">
+            <p>
+                📧 Email:
+                <a href="mailto:your-email@example.com">
+                 gbora9081@gmail.com
+                </a>
+            </p>
+            <p>
+                🔗 GitHub:
+                <a href="https://github.com/" target="_blank">
+                    My GitHub
+                </a>
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>
